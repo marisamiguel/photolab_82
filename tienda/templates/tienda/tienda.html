@@ -1,0 +1,63 @@
+{% extends "ProyectoWebApp/base.html" %}
+{% load static %}
+{% block content %}
+<div class="intro-text left-0 text-center bg-faded p-5 rounded">
+  <h2 class="section-heading mb-4" >
+    <span class="section-heading-upper"> IG: @BLOOM82</span>
+    <span class="section-heading-lower">TU TIENDA ONLINE </span>
+  </h2>
+  <p class="mb-3">Tus fotos en nuestra Galería y venta en Tienda Online
+  </p>
+ 
+</div>
+<div class="container">
+  <div style="float:right ">
+    <p>{{importe_total_carro}}</p>
+  </div>
+<div class="row">
+
+{% for producto in productos %}
+
+<div class="col-md-3">
+
+ <div class="card" style="width:100%; margin:20px 10px;">
+
+  <img src="{{producto.imagen.url}}" class="card-img-top">
+
+      <div class="card-body" style="text-align: center;">
+      <h7 class="card-title">{{producto.nombre}}</h7>
+      <p class="card-text">{{producto.precio}}&nbsp;€</p>
+      </div>
+      <div class="card-footer text-center">
+        <a href="#" class="btn btn-success">¡ OH, SI LO QUIERO!</a>
+      </div>
+
+  </div>
+
+</div>
+
+{% endfor %}
+</div>
+</div>
+
+
+  
+    <!-- Message -->
+    <section class="page-section cta">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner text-center rounded">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-upper">GALERÍA </span>
+                <span class="section-heading-lower">TIENDA VIRTUAL </span>
+              </h2>
+              <p class="mb-0">VENDE TUS IMÁGENES O COMPARTE TU CREACIÓN DE MANERA TOTALMENTE
+                  GRATUITA.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {% endblock %}
