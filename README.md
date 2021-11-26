@@ -19,4 +19,10 @@ a este hobbie ( recomendaciones, consejos etc.)
  - GEOLOCALIZACION DE FOTOS /POP UP DE LA MISMA
  - CARGAR EN LA BBDD METADATOS DE LAS FOTOS, CREAR CONSULTAS PARA AGILIZAR  BUSQUEDAS DE TIPO GENÉRICO
  - BUSCADOR POR TIPO DE CAMARA , OBJETIVO ,CATEGORIA
+
+============
+
+Cámara: Panasonic
+Objetivo: Leica
  
+============
