@@ -15,7 +15,7 @@ la contraseña).En el template de contacto queda insertado el mapa ( no he queri
 5º BLOG: se vuelca contenido de las fotos con la intenciónd e ir añadiendo entradas al mismo y realizar un contenido a modo de diario de viaje y algo mas personalizado en relación
 a este hobbie ( recomendaciones, consejos etc.)
 
-*lA INTENCIÓN DE ESTA APP ES IMPLEMENTAR NUEVAS PRESTACIONES EN LA MISMA: 
+*lA INTENCIÓN DE ESTA APP ES IMPLEMENTAR NUEVAS PRESTACIONES EN LA MISMA:* 
  - GEOLOCALIZACION DE FOTOS
  - CARGAR EN LA BBDD METADATOS DE LAS FOTOS
  - BUSCADOR POR TIPO DE CAMARA Y OBJETIVO ,CATEGORIA
