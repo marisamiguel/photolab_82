@@ -20,9 +20,10 @@ a este hobbie ( recomendaciones, consejos etc.)
  - CARGAR EN LA BBDD METADATOS DE LAS FOTOS, CREAR CONSULTAS PARA AGILIZAR  BUSQUEDAS DE TIPO GENÉRICO
  - BUSCADOR POR TIPO DE CAMARA , OBJETIVO ,CATEGORIA
 
-============
+==================
 
 Cámara: Panasonic
+
 Objetivo: Leica
  
-============
+=================
