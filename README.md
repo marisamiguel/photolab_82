@@ -16,8 +16,7 @@ La página consta de 5 enlaces:
 4º CONTACTO : formulario (forms.py) de contacto ( habría que habilitar desde gmail exclusivamente el acceso a applicaciones poco seguras y configurar en settings el email y 
 la contraseña).En el template de contacto queda insertado el mapa ( no he querido mostrarlo porque me rompe el css de la imagen y se desajusta el contenido).Me queda por habilitar.
 
-5º BLOG: se vuelca contenido de las fotos con la intenciónd e ir añadiendo entradas al mismo y realizar un contenido a modo de diario de viaje y algo mas personalizado en relación
-a este hobbie ( recomendaciones, consejos etc.)
+5º BLOG: se vuelca contenido de las fotos con la intención de ir añadiendo entradas al mismo y realizar un contenido a modo de diario  en relación a la fotografía(recomendaciones, consejos,enlaces etc.)
 
 *lA INTENCIÓN DE ESTA APP ES IMPLEMENTAR NUEVAS PRESTACIONES EN LA MISMA:* 
  - GEOLOCALIZACION DE FOTOS /POP UP DE LA MISMA
