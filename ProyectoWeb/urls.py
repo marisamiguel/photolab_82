@@ -22,7 +22,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
-import debug_toolbar
+
 from imagenes.views import ImagenCreateView, ImagenesListView
 
  #CREO EL ENLACE DE LAS URLS DE LAS APLICACIONES CON INCLUDE
@@ -39,6 +39,5 @@ urlpatterns = [
      # para autenticación
     path('accounts/', include('django.contrib.auth.urls')),
     path('', include('ProyectoWebApp.urls')),
-  
-    path('__debug__/', include(debug_toolbar.urls)),    
+     
 ]
