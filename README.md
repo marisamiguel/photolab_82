@@ -9,7 +9,7 @@ El menú de navegación consta de 5 enlaces:
 
 1º HOME: página de presentación general de la web.
 
-2º SERVICIOS: primera carga de imágenes desde la base de datos; recoger (Nombre,contenido,imagen).
+2º SERVICIOS: primera carga de imágenes desde la base de datos (Nombre,contenido,imagen).
 
 3º TIENDA  VIRTUAL : segunda carga de imágenes a la base de datos ( Titulo, categoría,imagen).
 
