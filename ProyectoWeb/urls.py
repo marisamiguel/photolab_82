@@ -14,9 +14,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
+from django import views
 from django.contrib import admin
 from django.urls import path,include
+from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
+import debug_toolbar
+from imagenes.views import ImagenCreateView, ImagenesListView
 
  #CREO EL ENLACE DE LAS URLS DE LAS APLICACIONES CON INCLUDE
 urlpatterns = [
@@ -25,6 +32,13 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('contacto/', include('contacto.urls')),
     path('tienda/', include('tienda.urls')),
-    path('', include('ProyectoWebApp.urls')),
+    path('imagenes/', include('imagenes.urls')),
     
+
+    # Raíz de nuestra web
+     # para autenticación
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('', include('ProyectoWebApp.urls')),
+  
+    path('__debug__/', include(debug_toolbar.urls)),    
 ]

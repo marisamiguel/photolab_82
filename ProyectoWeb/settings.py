@@ -43,6 +43,9 @@ INSTALLED_APPS = [
     'blog',
     'contacto',
     'tienda',
+    'imagenes',
+    
+    
     
     
    
@@ -57,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     
 ]
 
@@ -64,6 +68,7 @@ ROOT_URLCONF = 'ProyectoWeb.urls'
 
 TEMPLATES = [
     {
+
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
         'APP_DIRS': True,
