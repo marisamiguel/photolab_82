@@ -4,9 +4,12 @@
 
 
 
-  <h2>Crear Imagen</h2>
+  <h2 style=" font-family: 'Raleway';">Crear Imagen</h2>
+  <h3 style=" font-family: 'Raleway';">¡Bienvenida/do! a nuestro Background.
+
+  Aquí podrás cargar tus imágenes a nuestra base de datos y nosotros iremos actualizando la galería cada 15 días</h3>
   
-    <form action="" method="post"  enctype="multipart/form-data">
+    <form action="" method="post"  enctype="multipart/form-data" style="color: black;">
     {% csrf_token %}
     <table>
     {{ form.as_table }}
