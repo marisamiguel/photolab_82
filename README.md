@@ -9,7 +9,7 @@ El menú de navegación consta de 5 enlaces:
 
 1º HOME: página de presentación general de la web.
 
-2º SERVICIOS: primera carga de imágenes desde la base de datos; recoger (Nombre,contenido,imagen).
+2º SERVICIOS: primera carga de imágenes desde la base de datos (Nombre,contenido,imagen).
 
 3º TIENDA  VIRTUAL : segunda carga de imágenes a la base de datos ( Titulo, categoría,imagen).
 
@@ -17,6 +17,9 @@ El menú de navegación consta de 5 enlaces:
 la contraseña).En el template de contacto queda insertado el mapa ( no he querido mostrarlo porque me rompe el css de la imagen y se desajusta el contenido).Me queda por habilitar.
 
 5º BLOG: se vuelca contenido de las fotos con la intención de ir añadiendo entradas al mismo y realizar un contenido a modo de diario  en relación a la fotografía(recomendaciones, consejos,enlaces etc.)
+
+6º BACKGROUND: Se habilita una parte de background de la misma página web para que cualquier usuario/a que haya realizado login pueda subir sus fotos a nuestra Base de datos.
+De momento si en la URL escribes: /localhost:8000/imagenes y /imagenes/crear podrás acceder a nuestro Background.Falta por habilitar un boton en tienda que me permita registrar al usuario/a y que una vez realizada la autenticación le derive a esta url /imagenes/crear y otra que le permita hacer Logout desde /imagenes y redirigirle al inicio.
 
 *lA INTENCIÓN DE ESTA APP ES IMPLEMENTAR NUEVAS PRESTACIONES EN LA MISMA:* 
  - GEOLOCALIZACION DE FOTOS /POP UP DE LA MISMA
