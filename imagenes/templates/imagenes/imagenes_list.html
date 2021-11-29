@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
-{% block title %}Catálogo{% endblock %}
+
+{% block title %}Listado de Imagenes y Ubicación{% endblock %}
 {% block extracss %}
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
 integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
@@ -12,15 +13,16 @@ crossorigin=""/>
 {% endblock %}
 
 {% block content %}
-    <h1>Ubicación y Listado completo de Imagenes</h1>
-    
-    <ul>
+    <h1 style=" font-family: 'Raleway';">Ubicación y Listado completo de Imagenes
+     </h1>
+    <h3 style=" font-family: 'Raleway';">Listado completo de nuestra Base de datos</h3>
+    <ul style="align-content: center;">
     {% for img in imagenes %}
-        <li> {{img}}</li>
+        <li style="align-content: center;"> {{img}}</li>
     {% endfor %}
     </ul>
 
-    <div id="map"></div>
+    <div id="map" style="align-content: center;"></div>
 
 {% endblock%}
 
