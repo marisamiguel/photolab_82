@@ -18,6 +18,10 @@ la contraseña).En el template de contacto queda insertado el mapa ( no he queri
 
 5º BLOG: se vuelca contenido de las fotos con la intención de ir añadiendo entradas al mismo y realizar un contenido a modo de diario  en relación a la fotografía(recomendaciones, consejos,enlaces etc.)
 
+6º BACKGROUND: Se habilita una parte de background de la misma página web para que cualquier usuario/a que haya realizado login pueda subir sus fotos a nuestra Base de datos.
+De momento si en la URL escribes: /localhost:8000/imagenes y /imagenes/crear podrás acceder a nuestro Background.Falta por habilitar un boton que me permita registrar al usuario
+y que una vez realizada la autenticación le derive a esta url y otra que le permita hacer Logout.
+
 *lA INTENCIÓN DE ESTA APP ES IMPLEMENTAR NUEVAS PRESTACIONES EN LA MISMA:* 
  - GEOLOCALIZACION DE FOTOS /POP UP DE LA MISMA
  - CARGAR EN LA BBDD METADATOS DE LAS FOTOS, CREAR CONSULTAS PARA AGILIZAR  BUSQUEDAS DE TIPO GENÉRICO
