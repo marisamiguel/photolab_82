@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %} {{img.titulo}} {% endblock %}
+{% block content %}
+
+    <h1 style="color: white;">Informacion : {{img.titulo}}</h1>
+
+    &nbsp;
+    
+    <div class="container">
+      <div class="card bg-black text-white col-6 col-sm-6 col-md-4 col-lg-3 offset-4" >
+          <img class="card-img" src="{{img.get_image_url}}">
+          <div class="card-img-overlay">
+          </div>
+      </div>
+      <table class="table table-hover table-dark album_table" style="color: white;" style="width: 100%; opacity: 0.3;">
+        <thead>
+          <tr>
+            <td >Titulo</td>
+            <td >Artista</td>
+            <td >Colaborador</td>
+            <td></td>
+          </tr>
+        </thead>
+          {% for img in imagenes %}
+            <tr>
+              <td>{{img.title}}</td>
+              <td>{{song.artist}}</td>
+              <td>{{song.show_collab}}</td>
+              <td><audio controls src="{{ song.get_song_url }}"></audio><a href="{% url 'delete_song' song.id %}"><input type="button" value="Eliminar"><a href="{% url 'modify_song' song.id %}"><input type="button" value="Modificar"> </td>
+            </tr>
+          {% endfor %}
+      </table>
+      <p class="text-white">Acciones: <a href="{% url 'modify_album' album.id %}"><input type="button" value="Modificar"></a>
+                <a href="{% url 'delete_album' album.id %}"><input type="button" value="Eliminar"></a>
+      </p>
+    </div>
+
+    <!-- &nbsp;
+
+    <div class="container">
+      <div class="row">
+        {% for album in album_list %}
+          {% if album.artist.id == artist.id %}
+          <div class="card bg-black text-white col-6 col-sm-6 col-md-4 col-lg-3" >
+                  <img class="card-img" src="{{album.get_image_url}}">
+              <div class="card-img-overlay">
+                  <div  class="texto">
+                      <h5 class="card-title">{{album.title}}</h5>
+                  </div>
+              </div>
+          </div>
+          {% endif%}
+          {% endfor %}
+    </div>
+  </div> -->
+    {% endblock %}<p class="text-white">Acciones: <a href="{% url 'modify_album' album.id %}"><input type="button" value="Modificar"></a>
+    <a href="{% url 'delete_album' album.id %}"><input type="button" value="Eliminar"></a>
+</p>
