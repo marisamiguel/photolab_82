@@ -46,7 +46,14 @@
           <li class="nav-item {% if request.path == '/blog/' %}active{% endif %}px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'blog'%}">blog</a>
           </li>
-    
+          <li class="nav-item {% if request.path == '/imagenes/' %}active{% endif %}px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'imagenes'%}">Background</a>
+          </li>
+          {% if user.is_authenticated %}
+          <hr>
+          <li>{{user.username}} </li>
+          <li><a href="{% url 'logout'%}">Salir</a></li>
+          {% endif %}
         </ul>
       </div>
     </div>
@@ -94,6 +101,7 @@
     <script src="{% static 'ProyectoWebApp/vendor/jquery/jquery.min.js' %}"></script>
     <script src="{% static 'ProyectoWebApp/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
     
+    <!--Evento para cambiar el Titulo-->
     {% block extrajs%} 
     <script>
       function cambiar(obj){

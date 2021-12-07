@@ -136,6 +136,7 @@ import os
 
 STATIC_URL = '/static/'
 
+LOGIN_REDIRECT_URL="/imagenes/"
 # Archivos que subimos ,las imagenes quedan en la raiz (hay que crear carpeta/servicios)
 MEDIA_URL = '/media/'
 #donde debe ir a buscar los archivos multimedia( cambio el base por la carpeta media y dentro jerarquia de subcarpetas por cada app creada)

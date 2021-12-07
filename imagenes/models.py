@@ -23,7 +23,9 @@ class Imagen(models.Model):
         null=True, blank=True, editable=False, 
         on_delete=models.SET_NULL
     )
-    
-
+    class Meta:
+            verbose_name='imagen'
+            verbose_name_plural='imagenes'
+  
     def __str__(self):
         return self.titulo
