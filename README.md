@@ -18,8 +18,7 @@ la contraseña).En el template de contacto queda insertado el mapa ( no he queri
 
 5º BLOG: se vuelca contenido de las fotos con la intención de ir añadiendo entradas al mismo y realizar un contenido a modo de diario  en relación a la fotografía(recomendaciones, consejos,enlaces etc.)
 
-6º BACKGROUND: Se habilita una parte de background de la misma página web para que cualquier usuario/a que haya realizado login (para realizar login usar el usuario:marisadwes y contraseña:dwes2122).En la aplicación el usuario/ra podrá acceder pero no tendrá permisos para ver la BBDD solamente el superusario.
-Si que podrá registrarse para poder acceder el sitio Web.
+6º BACKGROUND: Se habilita una parte de background en un enlace de la misma página web; para que cualquier usuario/a que haya realizado login (para realizar login usar el usuario:marisadwes y contraseña:dwes2122) pueda acceder tanto a la Web como a dicha parte más específica y subir a la plataforma sus imágenes.En la aplicación el usuario/ra podrá acceder para ver la parte de frontend pero no tendrá permisos para ver el contenido de la BBDD; solamente el superusuario/a.
 
 
 *lA INTENCIÓN DE ESTA APP ES IMPLEMENTAR NUEVAS PRESTACIONES EN LA MISMA:* 
