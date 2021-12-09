@@ -2,7 +2,18 @@
 
 {% load static %}
 
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static '/ProyectoWebApp/img/bg_main.jpg'%}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static '/ProyectoWebApp/img/subetusfotos.jpg'%}" class="d-block w-100" alt="...">
+    </div>
+  </div>
+</div>
 {% block content %}
+
 <div class="intro-text left-0 text-center bg-faded p-5 rounded">
   <h2 class="section-heading mb-4" >
     <span class="section-heading-upper"> IG: @BLOOM82</span>
@@ -26,9 +37,11 @@
   
 </p></div>
 
-
-
     {% endfor %}
+
+ 
+    
+
     <!-- Message -->
     <section class="page-section cta">
       <div class="container">
