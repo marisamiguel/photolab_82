@@ -18,10 +18,11 @@ la contraseña).En el template de contacto queda insertado el mapa ( no he queri
 
 5º BLOG: se vuelca contenido de las fotos con la intención de ir añadiendo entradas al mismo y realizar un contenido a modo de diario  en relación a la fotografía(recomendaciones, consejos,enlaces etc.)
 
-6º BACKGROUND: Se habilita una parte de background de la misma página web para que cualquier usuario/a que haya realizado login pueda subir sus fotos a nuestra Base de datos.
-De momento si en la URL escribes: /localhost:8000/imagenes y /imagenes/crear podrás acceder a nuestro Background.Falta por habilitar un boton en tienda que me permita registrar al usuario/a y que una vez realizada la autenticación le derive a esta url /imagenes/crear y otra que le permita hacer Logout desde /imagenes y redirigirle al inicio.
+6º BACKGROUND: Se habilita una parte de background en un enlace de la misma página web; para que cualquier usuario/a que haya realizado login (para realizar login usar el usuario:marisadwes y contraseña:dwes2122) pueda acceder tanto a la Web como a dicha parte más específica y subir a la plataforma sus imágenes.En la aplicación el usuario/ra podrá acceder para ver la parte de frontend pero no tendrá permisos para ver el contenido de la BBDD; solamente el superusuario/a.
+
 
 *lA INTENCIÓN DE ESTA APP ES IMPLEMENTAR NUEVAS PRESTACIONES EN LA MISMA:* 
+ - ME FALTA POR AÑADIR EN EL MENÚ DESPLEGABLE DE LA ZONA DE BACKGROUND EL MODIFICAR / BORRAR FOTO. 
  - GEOLOCALIZACION DE FOTOS /POP UP DE LA MISMA
  - CARGAR EN LA BBDD METADATOS DE LAS FOTOS, CREAR CONSULTAS PARA AGILIZAR  BUSQUEDAS DE TIPO GENÉRICO
  - BUSCADOR POR TIPO DE CAMARA , OBJETIVO ,CATEGORIA
