@@ -9,11 +9,14 @@ from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 
 # Create your views here.
-# vista para el buscador en background
 
+def get_upload_to(instancia, filename):
+    return instancia.get_upload_to(filename)
+
+# vista para el buscador en background
 class SearchResultsListView(ListView):
     model = Imagen
-    context_object_name = 'Imagen'
+    context_object_name = 'imagenes'
     template_name = 'buscar.html'  # No usará la plantilla estándar del ListView
     paginate_by = 25
 
@@ -60,19 +63,23 @@ class ImagenCreateView(SuccessMessageMixin, CreateView):
 class ModificarImagen(SuccessMessageMixin, generic.UpdateView):
     model = Imagen
     fields = '__all__'
-    template_name = 'modificar_imagen.html'
+    template_name = 'imagenes/modificar_imagen.html'
     success_url = '/'
     success_message = "%(titulo)s se ha modificado correctamente" 
     #Eliminacion de Registros
 
 
-class BorrarImagen(generic.DeleteView):
+class BorrarImagen(SuccessMessageMixin,generic.DeleteView):
     model = Imagen
     fields = '__all__'
     success_url = '/' 
     success_message = "La Imagen se ha borrado correctamente"
     template_name = 'imagen_borrar.html'
-    
+
+    success_url = '/'
+    # form_class = AuthorForm
+    success_message = "%(titulo)s se ha borrado correctamente"
+
     def delete(self, request, *args, **kwargs):
     
         return super(BorrarImagen, self).delete(
@@ -81,7 +88,7 @@ class BorrarImagen(generic.DeleteView):
 class BorrarImg(generic.DeleteView):
         model = Imagen
         
-        template_name = 'imagen_borrar.html'
+        template_name = 'imagenes/imagen_borrar.html'
 
         def get_success_url(self):
                 return reverse_lazy('ImagenesListView', kwargs={'pk': self.object.imagenes.id})

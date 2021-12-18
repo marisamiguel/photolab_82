@@ -33,6 +33,7 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('contacto/', include('contacto.urls')),
     path('tienda/', include('tienda.urls')),
+    #nuestro Bakcground
     path('imagenes/', include('imagenes.urls')),
     # para autenticación
     path('imagenes/inicio', include('django.contrib.auth.urls')),

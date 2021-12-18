@@ -3,21 +3,36 @@
 
 {% block title %}Listado de Imagenes y Ubicación{% endblock %}
 
-
 {% block content %}
 <br><br>
-    <h1 style=" font-family: 'Raleway';">Ubicación y Listado completo de Imagenes
-     </h1>
-    <h3 style=" font-family: 'Raleway';">Listado completo de nuestra Base de datos</h3>
-    <ul style="align-content: center;">
-    {% for img in imagenes %}
-        <li style="align-content: center;"> {{img.titulo}}</li>
-        <li style="align-content: center;"> {{img.get_image_url}}</li>
-    {% endfor %}
-    </ul>
-    <p class="text-white">Acciones: <a href="{}"><input type="button" value="Modificar"></a>
-        <a href="{}"><input type="button" value="Eliminar"></a>
-</p>
+<h2 style=" font-family: 'Raleway';">Contenido de nuestra Galería en la Base de Datos</h2>
+<h3 style=" font-family: 'Raleway';">Modifica o Borra definitivamente tus imágenes de nuestra Base de Datos</h3>
+
+    &nbsp;
+    
+    <div class="container">
+
+      <br>
+      <table class="table table-striped" style="color: rgb(3, 3, 3);" style="width: 100%; opacity: 0.3;">
+        <thead>
+          <tr>
+            <td >Titulo</td>
+            <td >Fecha</td>
+            <td >Artista</td>
+            <td></td>
+          </tr>
+        </thead>
+          {% for img in imagenes %}
+            <tr>
+              <td>{{img.titulo}}</td>
+              <td>{{img.fecha_subida}}</td>
+              <td>{{img.subida_por}}</td>
+              <td><img src="{{  instance.image_field.url  }}"></img><a href=""><input type="button" value="Modificar"> </td>
+              <td><img src="{{ img.get_img_url }}"></img><a href=""><input type="button" value="Borrar"> </td>
+            </tr>
+          {% endfor %}
+      </table>
+
     <div id="map" style="align-content: center;"></div>
 
 {% endblock%}
