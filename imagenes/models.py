@@ -5,8 +5,7 @@ from django.db import models
 from django.conf import settings
 
 
-def get_upload_to(instancia, filename):
-    return instancia.get_upload_to(filename)
+
 
 # Create your models here.
 class Imagen(models.Model):
