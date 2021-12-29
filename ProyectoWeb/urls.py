@@ -24,7 +24,6 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
-from imagenes.views import ImagenCreateView, ImagenesListView
 
  #CREO EL ENLACE DE LAS URLS DE LAS APLICACIONES CON INCLUDE
 urlpatterns = [
