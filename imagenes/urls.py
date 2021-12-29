@@ -13,11 +13,13 @@ urlpatterns = [
     #listar imagenes
     path('listar', views.ImagenesListView.as_view(), 
         name='Listado de Imagenes'),
-    #crear imagenes
+    #crear,modificar,csv,json imagenes
     path('crear', views.ImagenCreateView.as_view(),
         name="creaimagen" ),
-        #borrar
-    path('borrar/<int:pk>', BorrarImagen.as_view(), name="borrarimagen"),
+    #path ('borrar/<int:pk>/', views.BorrarImagen().as_view(), name="eliminar"),
+    path('modificar/<int:pk>/', views.ModificarImagen.as_view(), name="modificarimagen"),
+    path ('imagen_csv',views.imagenes_csv, name="imagenes_csv"),
+    path ('imagen_json',views.imagenes_json, name="imagenes_json"),
     path('buscar', SearchResultsListView.as_view(),
         name="buscaimagenes" ),
     #para autenticación
