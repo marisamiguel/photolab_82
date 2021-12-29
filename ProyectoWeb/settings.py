@@ -64,6 +64,7 @@ MIDDLEWARE = [
     
 ]
 import os
+
 ROOT_URLCONF = 'ProyectoWeb.urls'
 
 TEMPLATES = [
