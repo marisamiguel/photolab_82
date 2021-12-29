@@ -8,8 +8,8 @@
     <div class="container">
         <div class="row">
             <h1>Eliminar fotografía</h1>
-            <p>¿Está seguro de que quiere eliminar el titulo de la imagen: {{ imagen.titulo }}?</p>
-            <form action="" method="POST">
+            <p>¿Está seguro de que quiere eliminar la imagen: {{img.titulo}}?</p>
+            <form action="" method="post">
                 {% csrf_token %}
                 <input type="submit" value="Sí, eliminar.">
             </form>
