@@ -1,12 +1,72 @@
 
-from django.shortcuts import render
+from django.core.checks import messages
+from django.shortcuts import redirect, render
 from django.views import generic
 from django.views.generic import ListView
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from . import models
 from imagenes.models import Imagen
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
+import csv
+import os
+from django.http import HttpResponse
+from django.http import JsonResponse
+
+def imagenToDictionary(i):
+    """
+    A utility function to convert object of type IMG to a Python Dictionary
+    """
+    output = {}
+    output["titulo"] = i.titulo
+    output["file"] = i.file.path
+    output["ancho"] = i.ancho
+    output["fecha_subida"] = i.fecha_subida
+    output["subida_por"] = str(i.subida_por)
+    
+    return output
+
+# Function based view
+def imagenes_json(request):
+    # Single Blog
+   
+
+    # Multiple Blogs
+    imagenes = models.Imagen.objects.all()
+    tempImagenes = []
+
+    # Converting `QuerySet` to a Python Dictionary
+    
+    for img in imagenes:
+        tempImagenes.append(imagenToDictionary(img)) # Converting `QuerySet` to a Python Dictionary
+
+
+    data = {
+        
+        "imagenes": tempImagenes
+    }
+
+    return JsonResponse(data)
+
+def imagenes_csv(request):
+    # Create the HttpResponse object with the appropriate CSV header.
+    response = HttpResponse(
+    content_type='text/csv',
+    headers={'Content-Disposition': 'attachment; filename="imagenes.csv"'},
+    )
+
+#configuramos el escritor y le pasamos una respuesta
+    writer = csv.writer(response, dialect='excel')
+#designar el Models   
+    imagenes= Imagen.objects.all()
+
+#añadir los encabezados a las columnas del csv s
+    writer.writerow(['Titulo', 'Ancho', 'Alto',' Fecha_subida','Subida_por'])
+#loop   
+    for img in imagenes:
+      writer.writerow([img.titulo, img.ancho,img.alto,img.fecha_subida,str(img.subida_por)])
+    return response
 
 # Create your views here.
 
@@ -60,35 +120,48 @@ class ImagenCreateView(SuccessMessageMixin, CreateView):
 
 
 # Creación de autor con CreateVio. Añadimos SuccessMesaageMixin para mensaje de éxito.
-class ModificarImagen(SuccessMessageMixin, generic.UpdateView):
+class ModificarImagen(SuccessMessageMixin,UpdateView):
     model = Imagen
-    fields = '__all__'
+    fields = ['titulo']
     template_name = 'imagenes/modificar_imagen.html'
     success_url = '/'
     success_message = "%(titulo)s se ha modificado correctamente" 
-    #Eliminacion de Registros
+    
+    # def modificar_imagen(request,imagen_id):
+    #     return render (request,'imagenes/modificar_imagen.html')
 
-
-class BorrarImagen(SuccessMessageMixin,generic.DeleteView):
+class BorrarImagen(SuccessMessageMixin,DeleteView):
     model = Imagen
-    fields = '__all__'
+    fields=['titulo']
+    template_name = '/imagenes/imagen_borrar.html'
     success_url = '/' 
     success_message = "La Imagen se ha borrado correctamente"
-    template_name = 'imagen_borrar.html'
-
-    success_url = '/'
-    # form_class = AuthorForm
-    success_message = "%(titulo)s se ha borrado correctamente"
-
-    def delete(self, request, *args, **kwargs):
     
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
         return super(BorrarImagen, self).delete(
             request, *args, **kwargs)
 
-class BorrarImg(generic.DeleteView):
+
+#borrar registros
+class BorrarImg(DeleteView):
         model = Imagen
         
         template_name = 'imagenes/imagen_borrar.html'
 
         def get_success_url(self):
-                return reverse_lazy('ImagenesListView', kwargs={'pk': self.object.imagenes.id})
+                return reverse_lazy('ImagenesListView', kwargs={'pk': self.object.img.id})
+
+
+
+def eliminarImg(id):
+ img= Imagen.objects.get(id=id)
+ img.delete()
+ return redirect('ImagenesListView')
+
+
+def get_image_url(self):
+        """Recibiendo URLS de Imagenes"""
+        if self.image and hasattr(self.image, 'url'):
+            return self.image.url
+
