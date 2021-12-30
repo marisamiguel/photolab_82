@@ -6,7 +6,6 @@ from django.conf import settings
 
 
 
-
 # Create your models here.
 class Imagen(models.Model):
     titulo = models.CharField(max_length=255, verbose_name='título')

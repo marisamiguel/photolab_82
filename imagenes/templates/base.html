@@ -88,6 +88,13 @@ crossorigin=""/>
     }).addTo(mimapa);
 
     L.marker([41.6447628,-0.9253785]).addTo(mimapa).bindPopup("CPI Los Enlaces");
+
+    var circle = L.circle([41.6447628, -0.9253785], {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 500
+}).addTo(mimapa);
 </script>
 {% endblock%}
 </body>

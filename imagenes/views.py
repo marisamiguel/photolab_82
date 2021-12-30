@@ -14,6 +14,7 @@ import os
 from django.http import HttpResponse
 from django.http import JsonResponse
 
+
 def imagenToDictionary(i):
     """
     A utility function to convert object of type IMG to a Python Dictionary
