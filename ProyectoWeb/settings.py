@@ -32,25 +32,26 @@ ALLOWED_HOSTS = ['localhost',
 # Application definition
 
 INSTALLED_APPS = [
+    #'django_crontab',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #'django_filters',
+    'dbbackup',
     'ProyectoWebApp',
     'servicios',
     'blog',
     'contacto',
     'tienda',
     'imagenes',
-    
-    
-    
-    
-   
-
+  
+      
 ]
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -145,6 +146,14 @@ LOGIN_REDIRECT_URL="/imagenes/"
 MEDIA_URL = '/media/'
 #donde debe ir a buscar los archivos multimedia( cambio el base por la carpeta media y dentro jerarquia de subcarpetas por cada app creada)
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+#Copia de seguridad despues de instalarla pip install backup
+DBBACKUP_STORAGE = 'django.core.files.storage.FileSystemStorage'
+DBBACKUP_STORAGE_OPTIONS = {'location': BASE_DIR /'backup'}
+
+CRONJOBS= [
+    ('*/1 * * * *', "ProyectoWeb.cron.my_backup"),
+]
 
 #configuracion de email
 EMAIL_BACKEND="django.core.mail.backends.smtp.EmailBackend"
