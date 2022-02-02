@@ -20,6 +20,7 @@ la contraseña).En el template de contacto queda insertado el mapa ( no he queri
 
 6º BACKGROUND: Se habilita una parte de background en un enlace de la misma página web; para que cualquier usuario/a que haya realizado login (para realizar login usar el usuario:marisadwes y contraseña:dwes2122) pueda acceder tanto a la Web como a dicha parte más específica y subir a la plataforma sus imágenes.En la aplicación el usuario/ra podrá acceder para ver la parte de frontend pero no tendrá permisos para ver el contenido de la BBDD; solamente el superusuario/a.
 
+Realizado el Backup  a mi virtualBox
 
 *lA INTENCIÓN DE ESTA APP ES IMPLEMENTAR NUEVAS PRESTACIONES EN LA MISMA:* 
  - ME FALTA POR AÑADIR EN EL MENÚ DESPLEGABLE DE LA ZONA DE BACKGROUND EL MODIFICAR / BORRAR FOTO. 
