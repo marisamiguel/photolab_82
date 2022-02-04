@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <h2 style=" font-family: 'Raleway';">Eliminar Imagen</h2>
+  <h3 style=" font-family: 'Raleway';">¡Ya puedes quitar tu fotografía! de nuestro Background.
+
+    <div class="container">
+        <div class="row">
+            <h1>Eliminar fotografía</h1>
+            <p>¿Está seguro de que quiere eliminar la imagen: {{img.titulo}}?</p>
+            <form action="" method="post">
+                {% csrf_token %}
+                <input type="submit" value="Sí, eliminar.">
+            </form>
+        </div>
+    </div>
+    
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+
+{% block title %}Listado de Imagenes y Ubicación{% endblock %}
+
+{% block content %}
+<br><br>
+<h2 style=" font-family: 'Raleway';">Contenido de nuestra Galería en la Base de Datos</h2>
+<h3 style=" font-family: 'Raleway';">Modifica o Borra definitivamente tus imágenes de nuestra Base de Datos</h3>
+
+    &nbsp;
+    
+    <div class="container">
+
+      <br>
+      <table class="table table-striped" style="color: rgb(3, 3, 3);" style="width: 100%; opacity: 0.3;">
+        <thead>
+          <tr>
+            <td >Titulo</td>
+            <td >Fecha</td>
+            <td >Artista</td>
+            <td></td>
+          </tr>
+        </thead>
+          {% for img in imagenes %}
+            <tr>
+              <td>{{img.titulo}}</td>
+              <td>{{img.fecha_subida}}</td>
+              <td>{{img.subida_por}}</td>
+              <td><img src="{{  img.image_field.url  }}"></img><a href="{% url 'modificarimagen' img.id %}"><input type="button" value="Modificar"> </td>
+          
+            </tr>
+          {% endfor %}
+      </table>
+
+    <div id="map" style="align-content: center;"></div>
+
+{% endblock%}
