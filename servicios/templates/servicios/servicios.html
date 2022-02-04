@@ -1,0 +1,61 @@
+{% extends "ProyectoWebApp/base.html" %}
+
+{% load static %}
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static '/ProyectoWebApp/img/bg_main.jpg'%}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static '/ProyectoWebApp/img/subetusfotos.jpg'%}" class="d-block w-100" alt="...">
+    </div>
+  </div>
+</div>
+{% block content %}
+
+<div class="intro-text left-0 text-center bg-faded p-5 rounded">
+  <h2 class="section-heading mb-4" >
+    <span class="section-heading-upper"> IG: @BLOOM82</span>
+    <span class="section-heading-lower">GALERÍA / LABORATORIO DE IDEAS </span>
+  </h2>
+  <p class="mb-3">Tus fotos en nuestra Galería y venta en Tienda Online
+  </p>
+ 
+</div>
+
+    {% for servicio in servicios %}
+
+<div style= margin-left:65px;><p>
+     
+     <br>
+     <h2 style= color:azure;>{{servicio.titulo}}</h2>
+
+     <p style= color:rgb(0,0,5);>{{servicio.contenido}}</p>
+     <p><img src="{{servicio.imagen.url}}"></p>
+    
+  
+</p></div>
+
+    {% endfor %}
+
+ 
+    
+
+    <!-- Message -->
+    <section class="page-section cta">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner text-center rounded">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-upper">GALERÍA DE IMÁGENES</span>
+                <span class="section-heading-lower">SÚBE TUS FOTOGRAFÍAS A NUESTRA BASE DE DATOS </span>
+              </h2>
+              <p class="mb-0">TODAS FOTOS TIENEN COPYRIGHT Y DERECHOS DE AUTOR</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}
