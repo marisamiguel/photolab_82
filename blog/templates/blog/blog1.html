@@ -1,0 +1,63 @@
+{% extends "ProyectoWebApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+<div class="intro-text left-0 text-center bg-faded p-5 rounded">
+  <h2 class="section-heading mb-4" >
+    <span class="section-heading-upper"> IG: @BLOOM82</span>
+    <span class="section-heading-lower"> BLOG</span>
+  </h2>
+  <p class="mb-3">
+  </p> 
+</div>
+
+
+
+
+    {% for post in posts %}
+
+       <!-- Heading -->
+   <section class="page-section clearfix">
+    <div class="container">
+      <div class="intro">
+        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{post.imagen.url}}" alt="">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4" >
+            <span class="section-heading-lower">{{post.titulo}}</span>
+            <span class="section-heading-upper">{{post.contenido}}</span>
+          </h2>
+          <p class="mb-3">Autor: {{post.autor}} 
+          </p>
+
+        <div style="text-align: left;font-size: 0.8;">
+
+          Autor: {{post.autor}}
+         
+        </div>
+      </div>
+    </div>
+  </section>
+
+    {% endfor %}
+   
+
+          
+    <!-- Message -->
+    <section class="page-section cta">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner text-center rounded">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-upper">BLOG</span>
+                <span class="section-heading-lower">+10 RAZONES </span>
+              </h2>
+              <p class="mb-0">AÑADE TU ENTRADA A NUESTRO BLOG</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}
+
