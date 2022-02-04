@@ -1,0 +1,84 @@
+{% extends "ProyectoWebApp/base.html" %}
+
+{% load static %}
+
+{% block extracss %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+crossorigin=""/>
+<style>
+    #map { height: 400px ;}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="intro-text left-0 text-center bg-faded p-5 rounded">
+  <h2 class="section-heading mb-4" >
+    <span class="section-heading-upper"> IG: @BLOOM82</span>
+    <span class="section-heading-lower">+ INFORMACIÓN</span>
+  </h2>
+  <p class="mb-3">
+  </p> 
+</div>
+
+<div class="contenedorFormulario">
+
+  {% if "valido" in request.GET %}
+
+  <p style="color:rgba(240, 255, 255, 0.883);">Información enviada correctamente.Gracias</p>
+
+  {% endif %}
+ 
+  <form action="" method="POST" style="text-align: center;">
+  {% csrf_token %}
+  <table style= "color:azure; margin: 20px auto;">{{miformulario.as_table}}</table>
+  <input type="submit" value="Enviar" style="width:80px;">
+  </form>
+  </div>
+
+
+
+
+
+  
+ 
+  {% block extrajs %}
+ <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+   
+<script>
+    var mimapa = L.map('map').setView([41.6447628,-0.9253785], 13);
+
+    L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+    maxZoom: 18
+    }).addTo(mimapa);
+
+    L.marker([41.6447628,-0.9253785]).addTo(mimapa).bindPopup("CPI Los Enlaces");
+</script>
+{% endblock%}
+
+
+    <!-- Message -->
+    <section class="page-section cta">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner text-center rounded">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-upper">ESTAMOS PARA AYUDARTE</span>
+                <span class="section-heading-lower">CONTACTO</span>
+              </h2>
+              <p class="mb-0">Marisamiar@outlook.com</p>
+              <p class="mb-0">692405684</p>
+              <p class="mb-0">Horario de atención al público:
+                  de Lunes a Viernes de 10:00h a 13:00h y de 17:00h a 20:00h
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}
