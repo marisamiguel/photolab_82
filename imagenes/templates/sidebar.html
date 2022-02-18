@@ -18,7 +18,7 @@
             <hr>
             <li>{{user.username}} </li>
             <li><a href="{% url 'logout'%}">Salir</a></li>
-            {% endif %}
+   
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="{% url 'imagenes' %}">Bienvenida/do al Background</a>
             </li>
@@ -36,7 +36,7 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'imagenes_json' %}">JSON Imagenes</a>
             </li> 
-            
+            {% endif %}
             <li class="nav-item">
               <a class="nav-link" href="{% url 'home' %}">Web PHOTO_LAB82 </a>
             </li>

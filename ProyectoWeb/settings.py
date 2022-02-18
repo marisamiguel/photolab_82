@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     #'django_filters',
     'dbbackup',
     'ProyectoWebApp',
+    'django_cleanup', # should go after your apps
     'servicios',
     'blog',
     'contacto',

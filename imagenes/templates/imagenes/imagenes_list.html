@@ -28,7 +28,7 @@
               <td>{{img.fecha_subida}}</td>
               <td>{{img.subida_por}}</td>
               <td><img src="{{  img.image_field.url  }}"></img><a href="{% url 'modificarimagen' img.id %}"><input type="button" value="Modificar"> </td>
-              <td><img src="{{ img.image_field.url }}"></img><a href="{% url 'eliminar' img.id %}"><input type="button" value="Borrar"> </td>
+              <td><img src="{{ img.image_field.url }}"></img><a href="{% url 'borrarimagen' img.id %}"><input type="button" value="Borrar"> </td>
             </tr>
           {% endfor %}
       </table>

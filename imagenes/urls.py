@@ -18,6 +18,7 @@ urlpatterns = [
         name="creaimagen" ),
     #path ('borrar/<int:pk>/', views.BorrarImagen().as_view(), name="eliminar"),
     path('modificar/<int:pk>/', views.ModificarImagen.as_view(), name="modificarimagen"),
+    path('borrar/<int:pk>/', views.BorrarImagen.as_view(), name="borrarimagen"),
     path ('imagen_csv',views.imagenes_csv, name="imagenes_csv"),
     path ('imagen_json',views.imagenes_json, name="imagenes_json"),
     path('buscar', SearchResultsListView.as_view(),

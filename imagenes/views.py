@@ -134,35 +134,8 @@ class ModificarImagen(SuccessMessageMixin,UpdateView):
 class BorrarImagen(SuccessMessageMixin,DeleteView):
     model = Imagen
     fields=['titulo']
-    template_name = '/imagenes/imagen_borrar.html'
+    template_name = 'imagenes/imagen_borrar.html'
     success_url = '/' 
-    success_message = "La Imagen se ha borrado correctamente"
+    success_message = "%(titulo)s La Imagen se ha borrado correctamente"
     
-    def delete(self, request, *args, **kwargs):
-        messages.success(self.request, self.success_message)
-        return super(BorrarImagen, self).delete(
-            request, *args, **kwargs)
-
-
-#borrar registros
-class BorrarImg(DeleteView):
-        model = Imagen
-        
-        template_name = 'imagenes/imagen_borrar.html'
-
-        def get_success_url(self):
-                return reverse_lazy('ImagenesListView', kwargs={'pk': self.object.img.id})
-
-
-
-def eliminarImg(id):
- img= Imagen.objects.get(id=id)
- img.delete()
- return redirect('ImagenesListView')
-
-
-def get_image_url(self):
-        """Recibiendo URLS de Imagenes"""
-        if self.image and hasattr(self.image, 'url'):
-            return self.image.url
 
